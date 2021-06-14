@@ -1,10 +1,10 @@
 use DBBootCamp
 
--- Insert Roles
-insert into Roles (RoleName) values ('Owner')
-insert into Roles (RoleName) values ('Swain')
-insert into Roles (RoleName) values ('Bar Maiden')
-insert into Roles (RoleName) values ('Filthy Peasant Patron')
+
+
+
+
+
 
 -- Locations
 insert into Locations (LocName) values ('New Jersey')
@@ -27,6 +27,19 @@ insert into Taverns (TavernName,FloorsCount,OwnerID,LocationID) values ('Battles
 insert into Taverns (TavernName,FloorsCount,OwnerID,LocationID) values ('Goldshire',3,2,2);
 insert into Taverns (TavernName,FloorsCount,OwnerID,LocationID) values ('Midgard',5,2,3);
 insert into Taverns (TavernName,FloorsCount,OwnerID,LocationID) values ('Blue Moon Inn',2,2,4);
+
+
+--Insert Services_Offered
+
+--Insert Orders
+
+--Insert Sales
+
+-- Insert Roles
+insert into Roles (RoleName) values ('Owner')
+insert into Roles (RoleName) values ('Swain')
+insert into Roles (RoleName) values ('Bar Maiden')
+insert into Roles (RoleName) values ('Filthy Peasant Patron')
 
 -- Insert UserRoles
 insert into UserRoles (RoleID,UserID) values (1,1)
