@@ -19,11 +19,35 @@
     </LogicalFolder>
     <LogicalFolder Name="Queries" Type="0" Sorted="true">
       <Items>
-        <FileNode Name="SQLQuery1.sql">
+        <FileNode Name="Assignment_2.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-51RUSE7\DBBOOTCAMP:True</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>DESKTOP-51RUSE7\DBBOOTCAMP</AssociatedConnSrvName>
           <AssociatedConnUserName />
-          <FullPath>SQLQuery1.sql</FullPath>
+          <FullPath>Assignment_2.sql</FullPath>
+        </FileNode>
+        <FileNode Name="create_FK.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-51RUSE7\DBBOOTCAMP:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-51RUSE7\DBBOOTCAMP</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>create_FK.sql</FullPath>
+        </FileNode>
+        <FileNode Name="create_tables.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-51RUSE7\DBBOOTCAMP:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-51RUSE7\DBBOOTCAMP</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>create_tables.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Lab2_6102021.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-51RUSE7\DBBOOTCAMP:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-51RUSE7\DBBOOTCAMP</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>Lab2_6102021.sql</FullPath>
+        </FileNode>
+        <FileNode Name="seed_tables.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-51RUSE7\DBBOOTCAMP:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-51RUSE7\DBBOOTCAMP</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>seed_tables.sql</FullPath>
         </FileNode>
       </Items>
     </LogicalFolder>

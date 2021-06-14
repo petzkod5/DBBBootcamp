@@ -1,21 +1,22 @@
-create table GuestInfo
+create table user_info
 (
 	UserID int foreign key (UserID) references Users(UserID),
+	userName varchar(150),
+	Notes varchar(MAX),
 	Birthday varchar(50),
 	Cakeday varchar(50),
 	StatusID int foreign key (StatusID) references Statuses(StatusID),
 	levelID int foreign key (levelID) references Levels(levelID),
-	classID int foreign key (classID) references Classes(ClassID)
 
 )
 
-create table Levels
+create table class_levels
 (
 	levelID int primary key identity(1,1),
-	GuestID int foreign key (GuestID) references ,
+	GuestID int foreign key (GuestID) references Users(UserID),
 	classID int foreign key (classID) references Classes(ClassID),
 	levels int,
-	date_leveled varchar(50)
+	date_leveled date
 )
 
 create table Classes
