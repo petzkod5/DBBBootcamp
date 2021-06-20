@@ -57,3 +57,6 @@ INNER JOIN Classes ON Classes.classID=class_levels.classID
 ORDER BY Users.UserID
 
 --Write a series of INSERT commands that will insert the statuses of one table into another of your choosing using SELECT statements 
+INSERT INTO UserStatuses(statusName)
+SELECT statusName FROM ServiceStatuses;
+SELECT * FROM UserStatuses
