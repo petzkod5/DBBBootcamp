@@ -1,14 +1,3 @@
-SELECT *
-FROM INFORMATION_SCHEMA.TABLES
-WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_CATALOG='DBBootCamp'
-
-CREATE VIEW [User Info] AS
-SELECT DISTINCT *
-FROM Users
-INNER JOIN user_info ON user_info.UserID=Users.UserID
-INNER JOIN class_levels ON class_levels.UserID=Users.UserID
-INNER JOIN Classes ON Classes.classID=class_levels.classID
-
 select * from UserRoles
 select * from Roles
 select * from Sales
@@ -66,3 +55,5 @@ INNER JOIN user_info ON user_info.UserID=Users.UserID
 INNER JOIN class_levels ON class_levels.UserID=Users.UserID
 INNER JOIN Classes ON Classes.classID=class_levels.classID
 ORDER BY Users.UserID
+
+--Write a series of INSERT commands that will insert the statuses of one table into another of your choosing using SELECT statements 
