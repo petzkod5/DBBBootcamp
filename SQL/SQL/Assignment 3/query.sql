@@ -53,7 +53,14 @@ INNER JOIN user_info ON user_info.UserID=Users.UserID
 order by user_info.userName ASC
 
 --Write a query that returns Guest Classes with Levels and Generate a new column with a label for their level grouping (lvl 1-10, 10-20, etc)
-SELECT Users.UserID,user_info.userName,Classes.className,class_levels.classLevel
+SELECT Users.UserID,user_info.userName,Classes.className,class_levels.classLevel,
+	CASE
+		WHEN class_levels.classLevel >= 1 AND class_levels.classLevel <= 10 THEN '1-10'
+		WHEN class_levels.classLevel >=11 AND class_levels.classLevel <= 20 THEN '11-20'
+		WHEN class_levels.classLevel >=21 AND class_levels.classLevel <= 30 THEN '21-30'
+		WHEN class_levels.classLevel >=31 AND class_levels.classLevel <= 40 THEN '31-40'
+		ELSE 'Pro'
+	END AS ClassGroup
 FROM Users
 INNER JOIN user_info ON user_info.UserID=Users.UserID
 INNER JOIN class_levels ON class_levels.UserID=Users.UserID
