@@ -2,6 +2,13 @@ SELECT *
 FROM INFORMATION_SCHEMA.TABLES
 WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_CATALOG='DBBootCamp'
 
+CREATE VIEW [User Info] AS
+SELECT DISTINCT *
+FROM Users
+INNER JOIN user_info ON user_info.UserID=Users.UserID
+INNER JOIN class_levels ON class_levels.UserID=Users.UserID
+INNER JOIN Classes ON Classes.classID=class_levels.classID
+
 select * from UserRoles
 select * from Roles
 select * from Sales
@@ -10,11 +17,15 @@ select * from Services_Offered
 select * from Taverns
 select * from class_levels
 select * from user_info
-select * from Statuses
+select * from ServiceStatuses
+select * from UserStatuses
 select * from Users
 select * from Locations
 select * from Supplies
 select * from Classes
+select * from Rooms
+select * from RoomInfo
+select * from RoomStays
 
 -- Write a query that returns guests with a birthday before 2000.
 SELECT user_info.userName, Users.UserID, user_info.Birthday
@@ -23,4 +34,28 @@ INNER JOIN user_info ON Users.UserID=user_info.UserID
 WHERE user_info.Birthday < '1/1/2000'
 
 -- Write a query to return rooms that cost more than 100 gold a night
+SELECT Taverns.TavernName,Rooms.RoomID,RoomInfo.RoomNumber,RoomStays.rate
+FROM Rooms
+INNER JOIN RoomInfo ON Rooms.RoomID=RoomInfo.RoomID
+INNER JOIN Taverns ON Taverns.TavernID=Rooms.TavernID
+INNER JOIN RoomStays ON RoomStays.RoomID=Rooms.RoomID
+WHERE RoomStays.rate > 100
 
+-- Write a query that returns UNIQUE guest names. 
+SELECT DISTINCT *
+from Users
+INNER JOIN user_info ON user_info.UserID=Users.UserID
+
+--Write a query that returns all guests ordered by name (ascending) Use ASC or DESC after your ORDER BY [col]
+SELECT *
+FROM Users
+INNER JOIN user_info ON user_info.UserID=Users.UserID
+order by user_info.userName ASC
+
+--Write a query that returns Guest Classes with Levels and Generate a new column with a label for their level grouping (lvl 1-10, 10-20, etc)
+SELECT Users.UserID,user_info.userName,Classes.className,class_levels.classLevel
+FROM Users
+INNER JOIN user_info ON user_info.UserID=Users.UserID
+INNER JOIN class_levels ON class_levels.UserID=Users.UserID
+INNER JOIN Classes ON Classes.classID=class_levels.classID
+ORDER BY Users.UserID
