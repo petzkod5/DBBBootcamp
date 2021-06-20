@@ -18,7 +18,11 @@ JOIN Locations ON Locations.LocationID=Taverns.LocationID
 WHERE Users.RoleID = 1
 
 --Write a query that returns all guests ordered by name (ascending) and their classes and corresponding levels
-SELECT Users.UserID,user_info.userName,Classes.className,class_levels.classLevel
+SELECT 
+	Users.UserID,
+	user_info.userName,
+	Classes.className,
+	class_levels.classLevel
 FROM Users
 JOIN user_info ON user_info.UserID=Users.UserID
 JOIN class_levels ON class_levels.UserID=Users.UserID
@@ -33,7 +37,27 @@ INNER JOIN Services_Offered ON Services_Offered.ServiceID=Sales.ServiceID
 ORDER BY Sales.price DESC
 
 --Write a query that returns guests with 2 or more classes
-
+SELECT
+	i.userName,
+	i.UserID
+FROM class_levels c
+INNER JOIN user_info i ON i.UserID=c.UserID
+GROUP BY i.UserID, i.userName
+HAVING COUNT(distinct c.classID) >= 2;
 
 
 --Write a query that returns guests with 2 or more classes with levels higher than 5
+SELECT
+	i.userName,
+	i.UserID
+FROM class_levels c
+INNER JOIN user_info i ON i.UserID=c.UserID
+GROUP BY i.UserID, i.userName
+HAVING COUNT(distinct c.classID) >= 2
+
+SELECT * FROM class_levels c
+ORDER BY c.UserID
+
+--Write a query that returns guests with ONLY their highest level class
+
+--Write a query that returns guests that stay within a date range. Please remember that guests can stay for more than one night AND not all of the dates they stay have to be in that range (just some of them)
