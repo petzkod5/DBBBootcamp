@@ -1,4 +1,6 @@
-﻿-- Classes
+﻿use DBBootCamp
+
+-- Classes
 insert into Classes (className) values
 ('Hunter'),('Paladin'),('Warrior'),('Shaman'),('Rogue'),('Priest'),('Druid'),
 ('Death Knight'),('Bubble Knight'),('Bard')

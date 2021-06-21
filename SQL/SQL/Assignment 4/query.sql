@@ -61,3 +61,4 @@ ORDER BY c.UserID
 --Write a query that returns guests with ONLY their highest level class
 
 --Write a query that returns guests that stay within a date range. Please remember that guests can stay for more than one night AND not all of the dates they stay have to be in that range (just some of them)
+

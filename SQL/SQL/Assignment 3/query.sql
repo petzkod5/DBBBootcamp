@@ -41,8 +41,18 @@ FROM Users
 INNER JOIN user_info ON user_info.UserID=Users.UserID
 order by user_info.userName ASC
 
+--Write a query that returns the top 10 highest price sales
+SELECT TOP 10 *
+FROM Sales
+ORDER BY price DESC
+
+--Write a query to return all the values stored in all Lookup Tables - Lookup tables are the tables we reference typically with just an ID and a name. 
 --Write a query that returns Guest Classes with Levels and Generate a new column with a label for their level grouping (lvl 1-10, 10-20, etc)
-SELECT Users.UserID,user_info.userName,Classes.className,class_levels.classLevel,
+SELECT 
+	Users.UserID,
+	user_info.userName,
+	Classes.className,
+	class_levels.classLevel,
 	CASE
 		WHEN class_levels.classLevel >= 1 AND class_levels.classLevel <= 10 THEN '1-10'
 		WHEN class_levels.classLevel >=11 AND class_levels.classLevel <= 20 THEN '11-20'
@@ -60,3 +70,9 @@ ORDER BY Users.UserID
 INSERT INTO UserStatuses(statusName)
 SELECT statusName FROM ServiceStatuses;
 SELECT * FROM UserStatuses
+
+
+
+
+
+

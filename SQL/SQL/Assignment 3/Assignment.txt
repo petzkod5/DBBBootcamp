@@ -7,7 +7,6 @@ Write a query that returns guests with a birthday before 2000.
 Write a query to return rooms that cost more than 100 gold a night
 Write a query that returns UNIQUE guest names. 
 Write a query that returns all guests ordered by name (ascending) Use ASC or DESC after your ORDER BY [col]
-
 Write a query that returns the top 10 highest price sales
 Write a query to return all the values stored in all Lookup Tables - Lookup tables are the tables we reference typically with just an ID and a name. 
 
